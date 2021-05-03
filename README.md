@@ -5,4 +5,3 @@ I'm Valeria Iakovleva, I'm a student of Kharkiv and Binary Studio Academy. I'm i
 Here's my telegram, Twitter and Instagram:
 https://t.me/aimivall
 @vall1ly
-Hocus-pocus!
