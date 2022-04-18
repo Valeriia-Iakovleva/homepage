@@ -1,0 +1,285 @@
+::-moz-selection {
+    background: yellow;
+}
+
+ ::selection {
+    background: yellow;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 14px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    line-height: 1.4285em;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+body {
+    font-family: apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    line-height: 1.28571429em;
+    margin: 0 0 1rem 0;
+    font-weight: bold;
+    padding: 0;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child {
+    margin-bottom: 0;
+}
+
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 3rem;
+    letter-spacing: 0.25em;
+}
+
+section {
+    padding: 1em 0;
+}
+
+p {
+    margin: 0 0 1em;
+    line-height: 1.4285em;
+}
+
+p:first-child {
+    margin-top: 0;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+strong {
+    font-weight: 600;
+}
+
+small {
+    font-size: 80%;
+}
+
+ul,
+ol {
+    list-style: none outside none;
+    padding-left: 1.5em;
+    margin: 0;
+}
+
+ol {
+    counter-reset: ol-counter;
+}
+
+li {
+    list-style: none outside none;
+}
+
+
+/* Hide header, reveal footer */
+
+header {
+    position: fixed;
+    z-index: 1;
+    background: white;
+    top: 0;
+    left: 0;
+    height: 2em;
+    width: 100%;
+}
+
+header+main {
+    margin-top: 2em;
+}
+
+main {
+    overflow: auto;
+    z-index: 2;
+    background: white;
+    position: relative;
+}
+
+main:nth-last-child(3) {
+    margin-bottom: 50vh;
+}
+
+footer {
+    height: 50vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+/* Article */
+
+article {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    article {
+        width: 723px;
+        margin-top: calc((100% - 723px) / 2);
+        margin-bottom: calc((100% - 723px) / 2);
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    article {
+        width: 933px;
+        margin-top: calc((100% - 933px) / 2);
+        margin-bottom: calc((100% - 933px) / 2);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    article {
+        width: 1127px;
+        margin-top: 5em;
+        margin-bottom: 5em;
+    }
+}
+
+
+/* Page */
+
+.page {
+    position: relative;
+    padding: 3em;
+    background: white;
+    box-shadow: 0 10px 100px 0 rgba(34, 36, 38, 0.1);
+    transition: box-shadow 0.2s linear;
+}
+
+.page[style^="border-color"] {
+    padding: 4.5em;
+}
+
+.page[style^="border-color"]::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 2em;
+    top: 2em;
+    right: 2em;
+    bottom: 2em;
+    border-color: inherit;
+    border-width: 1em;
+    border-style: solid;
+    pointer-events: none;
+    transition: border-color 0.2s ease-in-out;
+}
+
+@media only screen {
+    .page:hover {
+        box-shadow: 0 10px 100px 0 rgba(34, 36, 38, 0.3);
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .page,
+    .page[style^="border-color"] {
+        padding: 0;
+    }
+    .page[style^="border-color"]::before {
+        display: none;
+    }
+}
+
+
+/* Print */
+
+@media print {
+    .header-left-top,
+    .a-right-bottom,
+    .time-right-bottom {
+        display: none;
+    }
+    .page,
+    .page[style] {
+        padding: 3em;
+    }
+    .grid {
+        display: block;
+    }
+    p a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.87)
+    }
+    section p a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.87)
+    }
+    .timeline li ul {
+        display: none;
+        visibility: hidden;
+    }
+    .avatar-wrapper {
+        padding: 0;
+        margin: 0;
+    }
+    .contacts {
+        margin-top: 1em;
+    }
+    .contacts li a.website {
+        display: block;
+    }
+    .credits {
+        display: none;
+    }
+    .no-print {
+        display: none;
+        visibility: hidden;
+    }
+    .print-row {
+        margin: 5px 0px 5px 0px;
+        padding: 5px 0px 5px 0px;
+    }
+    .four {
+        width: 31.25% !important;
+    }
+    .twelve {
+        width: 68.75% !important;
+    }
+}
